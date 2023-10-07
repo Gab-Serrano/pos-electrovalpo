@@ -4,8 +4,8 @@ package com.elctrovalpo;
  *
  * @author Gabriel
  */
-public class Computador extends Producto{
-    
+public class Computador extends Producto {
+
     private String procesador;
     private String tipo;
 
@@ -21,8 +21,8 @@ public class Computador extends Producto{
     }
 
     //Constructor con parámetros + super
-    public Computador(String nombre, int precioSinIVA, String procesador, String tipo ) {
-            super(nombre, precioSinIVA);
+    public Computador(String nombre, int precioSinIVA, String procesador, String tipo) {
+        super(nombre, precioSinIVA);
         this.procesador = procesador;
         this.tipo = tipo;
     }
@@ -43,15 +43,18 @@ public class Computador extends Producto{
         this.tipo = tipo;
     }
 
+    public void getNombreProducto() {
+        super.getNombre();
+    }
+
     @Override
     public String toString() {
         return "Computador{" + "procesador=" + procesador + ", tipo=" + tipo + '}';
     }
-    
+
     @Override
     public String descripcionDetallada() {
         String descripcion = "Computador: " + super.getNombre() + "\nPrecio sin IVA: $" + super.getPrecioSinIVA() + "\nProcesador: " + procesador + "\nTipo: " + tipo;
         return descripcion;
     }
-    
 }
