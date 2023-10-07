@@ -4,7 +4,7 @@ package com.elctrovalpo;
  *
  * @author Gabriel
  */
-abstract class Producto {
+abstract class Producto implements ImpuestoIVA{
     private String nombre;
     private int precioSinIVA;
 
@@ -40,5 +40,9 @@ abstract class Producto {
     }
 
     public abstract String descripcionDetallada ();
+    
+    public int obtenerPrecioConIVA(){
+        return precioSinIVA + calcularIVA(precioSinIVA);
+    }
     
 }
